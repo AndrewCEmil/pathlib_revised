@@ -3,3 +3,4 @@ wheel
 twine
 python-creole
 docutils
+pathlib2

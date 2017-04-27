@@ -9,6 +9,8 @@
 
 from pathlib_revised import Path2
 
+def print_func(x):
+    print(x)
 
 class DirEntryPath:
     """
@@ -40,7 +42,7 @@ class DirEntryPath:
         self.resolved_path = None
         self.resolve_error: contains the Error instance
     """
-    def __init__(self, dir_entry, onerror=print):
+    def __init__(self, dir_entry, onerror=print_func):
         """
         :param dir_entry: os.DirEntry() instance
         """

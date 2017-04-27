@@ -11,6 +11,7 @@ import logging
 import os
 import pathlib
 import shutil
+import pathlib2 as pathlib
 
 
 IS_WINDOWS = os.name == 'nt'
