@@ -106,7 +106,7 @@ class WindowsPath2(SharedPathMethods, pathlib.WindowsPath):
         In my testing it appears that python2 os.listdir requires a suffix slash when prefixing with \\?
         """
         suffix = ""
-        if not self.path.endswith("\\")
+        if not self.path.endswith("\\"):
             suffix = "\\"
         if self.is_absolute() and not self.path.startswith("\\\\"):
             return "\\\\?\\%s%s" % self.path, suffix
