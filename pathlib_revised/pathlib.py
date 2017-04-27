@@ -109,7 +109,7 @@ class WindowsPath2(SharedPathMethods, pathlib.WindowsPath):
         if not self.path.endswith("\\"):
             suffix = "\\"
         if self.is_absolute() and not self.path.startswith("\\\\"):
-            return "\\\\?\\%s%s" % self.path, suffix
+            return "\\\\?\\%s%s" % (self.path, suffix)
         return self.path + suffix
 
     @property
