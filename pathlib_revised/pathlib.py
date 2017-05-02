@@ -102,15 +102,10 @@ class WindowsPath2(SharedPathMethods, pathlib.WindowsPath):
         path, that should be longer than 259 characters (called: "MAX_PATH")
         see:
         https://msdn.microsoft.com/en-us/library/aa365247.aspx#maxpath
-
-        In my testing it appears that python2 os.listdir requires a suffix slash when prefixing with \\?
         """
-        suffix = ""
-        if not self.path.endswith("\\"):
-            suffix = "\\"
         if self.is_absolute() and not self.path.startswith("\\\\"):
-            return "\\\\?\\%s%s" % (self.path, suffix)
-        return self.path + suffix
+            return "\\\\?\\%s" % (self.path)
+        return self.path
 
     @property
     def path(self):
